@@ -961,4 +961,619 @@ html[data-theme="light"] .audio-player {
   margin-bottom:7px;
   color:var(--text);
   font-size:10px;
-  font-wei
+  font-wei0;
+}
+.form-help {
+  display:block;
+  margin-top:6px;
+  color:var(--muted);
+  font-size:9px;
+  line-height:1.6;
+}
+.switch-row {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  padding:11px 0;
+  border-bottom:1px solid var(--border);
+}
+.switch-row:last-child {
+  border-bottom:0;
+}
+.switch-copy {
+  min-width:0;
+  flex:1;
+}
+.switch-title {
+  display:block;
+  font-size:11px;
+  font-weight:800;
+}
+.switch-desc {
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:9px;
+  line-height:1.55;
+}
+.switch {
+  position:relative;
+  width:43px;
+  height:25px;
+  flex:0 0 43px;
+  margin-top:1px;
+}
+.switch input {
+  position:absolute;
+  width:1px;
+  height:1px;
+  opacity:0;
+}
+.switch-track {
+  position:absolute;
+  inset:0;
+  border:1px solid var(--border-strong);
+  border-radius:999px;
+  background:var(--panel);
+  cursor:pointer;
+  transition:background var(--ease),border-color var(--ease);
+}
+.switch-track::after {
+  position:absolute;
+  top:3px;
+  left:3px;
+  width:17px;
+  height:17px;
+  border-radius:50%;
+  background:var(--muted);
+  content:"";
+  transition:transform var(--ease),background var(--ease);
+}
+.switch input:checked+.switch-track {
+  border-color:rgba(var(--accent-rgb),.4);
+  background:rgba(var(--accent-rgb),.19);
+}
+.switch input:checked+.switch-track::after {
+  transform:translateX(18px);
+  background:var(--accent);
+}
+.switch input:focus-visible+.switch-track {
+  outline:3px solid var(--accent);
+  outline-offset:3px;
+}
+.settings-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:16px;
+}
+.storage-meter {
+  height:7px;
+  overflow:hidden;
+  margin:9px 0 6px;
+  border-radius:999px;
+  background:var(--border);
+}
+.storage-meter-fill {
+  width:0;
+  height:100%;
+  border-radius:inherit;
+  background:linear-gradient(90deg,var(--accent-2),var(--accent));
+}
+.footer {
+  padding:20px 6px 3px;
+  color:var(--subtle);
+  text-align:center;
+  font-size:10px;
+  line-height:1.8;
+}
+.footer strong {
+  color:var(--muted);
+}
+.toast-stack {
+  position:fixed;
+  z-index:1000;
+  right:12px;
+  bottom:max(14px,env(safe-area-inset-bottom));
+  left:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  pointer-events:none;
+}
+.toast {
+  display:flex;
+  max-width:min(500px,100%);
+  align-items:flex-start;
+  gap:10px;
+  padding:12px 15px;
+  border:1px solid var(--border-strong);
+  border-radius:13px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+  color:var(--text);
+  font-size:11px;
+  line-height:1.6;
+  pointer-events:auto;
+  animation:toast-in 180ms ease both;
+}
+.toast[data-kind="error"] {
+  border-color:rgba(var(--danger-rgb),.3);
+}
+.toast[data-kind="success"] {
+  border-color:rgba(var(--accent-rgb),.28);
+}
+.toast-icon {
+  flex-shrink:0;
+}
+.toast-message {
+  flex:1;
+  overflow-wrap:anywhere;
+}
+.toast-close {
+  width:25px;
+  height:25px;
+  flex-shrink:0;
+  border:0;
+  border-radius:7px;
+  background:transparent;
+  color:var(--muted);
+  cursor:pointer;
+}
+.dialog-backdrop {
+  position:fixed;
+  z-index:900;
+  inset:0;
+  display:grid;
+  place-items:center;
+  padding:16px;
+  background:rgba(3,7,16,.65);
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+}
+.dialog-card {
+  width:min(500px,100%);
+  max-height:min(82vh,760px);
+  overflow-y:auto;
+  padding:20px;
+  border:1px solid var(--border-strong);
+  border-radius:20px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+  animation:dialog-in 180ms ease both;
+}
+.dialog-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:14px;
+}
+.dialog-title {
+  margin:0;
+  font-size:17px;
+  font-weight:900;
+}
+.dialog-close {
+  width:35px;
+  height:35px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--panel-2);
+  cursor:pointer;
+}
+.dialog-body {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+}
+.dialog-footer {
+  display:flex;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:18px;
+}
+.drop-overlay {
+  position:fixed;
+  z-index:800;
+  inset:10px;
+  display:grid;
+  place-items:center;
+  border:3px dashed var(--accent);
+  border-radius:24px;
+  background:rgba(5,14,25,.9);
+  color:var(--accent);
+  text-align:center;
+  font-size:22px;
+  font-weight:900;
+  pointer-events:none;
+}
+.file-input-hidden {
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  clip-path:inset(50%);
+}
+.sr-only {
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  overflow:hidden!important;
+  clip:rect(1px,1px,1px,1px)!important;
+  clip-path:inset(50%)!important;
+  white-space:nowrap!important;
+}
+@keyframes pulse-dot {
+  0%,100% {
+    box-shadow:0 0 0 4px rgba(var(--danger-rgb),.1)
+  }
+  50% {
+    box-shadow:0 0 0 7px rgba(var(--danger-rgb),.035)
+  }
+}
+@keyframes record-glow {
+  0%,100% {
+    box-shadow:0 0 0 1px rgba(var(--danger-rgb),.2),0 12px 32px rgba(var(--danger-rgb),.18)
+  }
+  50% {
+    box-shadow:0 0 0 7px rgba(var(--danger-rgb),.055),0 15px 36px rgba(var(--danger-rgb),.28)
+  }
+}
+@keyframes enter-card {
+  from {
+    opacity:0;
+    transform:translateY(5px)
+  }
+  to {
+    opacity:1;
+    transform:translateY(0)
+  }
+}
+@keyframes toast-in {
+  from {
+    opacity:0;
+    transform:translateY(7px)
+  }
+  to {
+    opacity:1;
+    transform:translateY(0)
+  }
+}
+@keyframes dialog-in {
+  from {
+    opacity:0;
+    transform:translateY(6px) scale(.985)
+  }
+  to {
+    opacity:1;
+    transform:translateY(0) scale(1)
+  }
+}
+@media (max-width:780px) {
+  .recorder-grid {
+    grid-template-columns:minmax(0,1fr)
+  }
+  .recorder-side {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+  .recorder-side .notice-box {
+    grid-column:1/-1
+  }
+  .recording-list {
+    grid-template-columns:minmax(0,1fr)
+  }
+}
+@media (max-width:560px) {
+  body {
+    padding-right:10px;
+    padding-left:10px
+  }
+  .topbar {
+    align-items:flex-start
+  }
+  .brand-mark {
+    width:42px;
+    height:42px;
+    flex-basis:42px;
+    border-radius:14px;
+    font-size:22px
+  }
+  .privacy-pill {
+    max-width:112px;
+    white-space:normal;
+    text-align:center;
+    line-height:1.4
+  }
+  .panel-body {
+    padding:14px
+  }
+  .recorder-main {
+    padding:16px 12px
+  }
+  .recorder-side {
+    grid-template-columns:minmax(0,1fr)
+  }
+  .recorder-side .notice-box {
+    grid-column:auto
+  }
+  .timer {
+    margin-top:20px
+  }
+  .visualizer-frame {
+    height:100px
+  }
+  .record-button {
+    width:132px;
+    height:132px;
+    flex-basis:132px
+  }
+  .record-button .emoji {
+    font-size:30px
+  }
+  .stats-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+  .toolbar {
+    grid-template-columns:minmax(0,1fr) auto
+  }
+  .toolbar .search-wrap {
+    grid-column:1/-1
+  }
+  .settings-grid {
+    grid-template-columns:minmax(0,1fr)
+  }
+  .panel-header {
+    align-items:flex-start
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important
+  }
+}
+</style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">🎙️</div>
+        <div>
+          <p class="brand-name">Voice Recorder Studio</p>
+          <p class="brand-subtitle">Your voice. Your device. Your settings.</p>
+        </div>
+      </div>
+      <div class="privacy-pill" title="Recordings are stored locally in this browser">🔒 On-device library</div>
+    </header>
+    <section class="hero">
+      <p class="eyebrow">PERSONAL AUDIO WORKSPACE</p>
+      <h1>Make every word<br>count.</h1>
+      <p>Record clearly, add markers, organize takes, customize the interface, and keep a local library right in your browser.</p>
+    </section>
+    <nav class="tabbar" aria-label="Main navigation" role="tablist">
+      <button class="tab-button" role="tab" id="tab-recorder" aria-controls="page-recorder" aria-selected="true" data-tab="recorder">🎙️ Recorder</button>
+      <button class="tab-button" role="tab" id="tab-library" aria-controls="page-library" aria-selected="false" data-tab="library">🎧 Library <span id="navCount" class="count-pill">0</span>
+      </button>
+      <button class="tab-button" role="tab" id="tab-settings" aria-controls="page-settings" aria-selected="false" data-tab="settings">⚙️ Customize</button>
+    </nav>
+    <main>
+      <section id="page-recorder" role="tabpanel" aria-labelledby="tab-recorder" data-page="recorder">
+        <div class="recorder-grid">
+          <section class="panel recorder-main" aria-label="Recording controls">
+            <div class="status-row">
+              <div id="status" class="status" data-state="ready" role="status" aria-live="polite" aria-atomic="true">Tap to start recording</div>
+            </div>
+            <div id="timer" class="timer" role="timer" aria-label="Recording duration">00:00</div>
+            <div class="timer-meta">
+              <span id="liveDot" class="live-dot">
+              </span>
+              <span id="timerCaption">READY WHEN YOU ARE</span>
+            </div>
+            <div class="visualizer-frame">
+              <canvas id="visualizer" role="img" aria-label="Live microphone sound visualization">
+              </canvas>
+            </div>
+            <div class="meter-row" aria-label="Input level">
+              <span class="meter-label">MIC LEVEL</span>
+              <div class="meter-track">
+                <div id="meterFill" class="meter-fill">
+                </div>
+              </div>
+              <span id="meterValue" class="meter-value">0%</span>
+            </div>
+            <div class="record-actions">
+              <button id="recordButton" class="record-button" type="button" aria-label="Start recording" aria-pressed="false">
+                <span id="recordEmoji" class="emoji" aria-hidden="true">🎙️</span>
+                <span id="recordLabel" class="button-label">START</span>
+              </button>
+            </div>
+            <p id="buttonHelp" class="button-help">Tap START and allow microphone access. Your file is saved when you stop.</p>
+            <div class="record-actions" style="margin-top:16px">
+              <button id="pauseButton" class="round-control" type="button" disabled>⏸️ Pause</button>
+              <button id="markerButton" class="round-control primary-soft" type="button" disabled>🏷️ Add marker</button>
+              <button id="discardButton" class="round-control danger-soft" type="button" disabled>🗑️ Discard</button>
+            </div>
+          </section>
+          <aside class="recorder-side" aria-label="Recording details">
+            <section class="mini-card">
+              <h2 class="mini-card-title">
+                <span>📋 Current take</span>
+                <span class="small-pill" id="takeFormat">AUTO</span>
+              </h2>
+              <div class="metric-row">
+                <span class="metric-label">Quality</span>
+                <span id="takeQuality" class="metric-value">High · 192 kbps</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">File extension</span>
+                <span id="takeExtension" class="metric-value">Browser default</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Auto-stop</span>
+                <span id="takeLimit" class="metric-value">Off</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Noise reduction</span>
+                <span id="takeNoise" class="metric-value">Enabled</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Session markers</span>
+                <span id="takeMarkers" class="metric-value">0</span>
+              </div>
+            </section>
+            <section class="mini-card">
+              <h2 class="mini-card-title">
+                <span>🏷️ Take markers</span>
+                <span id="markerCount" class="small-pill">0</span>
+              </h2>
+              <p class="mini-card-subtitle">Bookmark useful moments while recording.</p>
+              <div id="markersList" class="markers-list">
+                <div class="marker-empty">No markers yet. Start recording, then add a marker.</div>
+              </div>
+            </section>
+            <section class="mini-card">
+              <h2 class="mini-card-title">
+                <span>📦 Local storage</span>
+                <span id="storageStatus" class="small-pill">Checking…</span>
+              </h2>
+              <div class="metric-row">
+                <span class="metric-label">Saved recordings</span>
+                <span id="storageRecordings" class="metric-value">0</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Library size</span>
+                <span id="storageSize" class="metric-value">0 KB</span>
+              </div>
+              <div class="storage-meter">
+                <div id="storageFill" class="storage-meter-fill">
+                </div>
+              </div>
+              <p id="storageHelp" class="form-help">Your library is stored in this browser on this device.</p>
+            </section>
+            <div class="notice-box">
+              <span aria-hidden="true">💡</span>
+              <span>
+                <strong>Quick tip:</strong> A quiet room and a close-range microphone can improve audio more than software settings alone.</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section id="page-library" role="tabpanel" aria-labelledby="tab-library" data-page="library" hidden>
+        <div class="panel panel-body">
+          <div class="panel-header">
+            <div>
+              <h2 class="panel-title">Your recording library</h2>
+              <p class="panel-description">Search, play, rename, favorite, download, or organize your audio.</p>
+            </div>
+            <span id="libraryCount" class="count-pill">0 recordings</span>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">🎧</div>
+              <strong id="statCount" class="stat-value">0</strong>
+              <span class="stat-label">Recordings stored</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">⏱️</div>
+              <strong id="statDuration" class="stat-value">00:00</strong>
+              <span class="stat-label">Total duration</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">💾</div>
+              <strong id="statSize" class="stat-value">0 KB</strong>
+              <span class="stat-label">Audio size</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">⭐</div>
+              <strong id="statFavorites" class="stat-value">0</strong>
+              <span class="stat-label">Favorites</span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <label class="search-wrap">
+              <span class="search-icon" aria-hidden="true">🔎</span>
+              <span class="sr-only">Search recordings</span>
+              <input id="searchInput" class="field" type="search" placeholder="Search name, notes, or tag…" autocomplete="off">
+            </label>
+            <select id="sortSelect" class="select" aria-label="Sort recordings">
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+              <option value="name">Name A–Z</option>
+              <option value="size">Largest first</option>
+              <option value="duration">Longest first</option>
+            </select>
+            <button id="importButton" class="button soft" type="button">📥 Import</button>
+          </div>
+          <div class="filter-row" role="group" aria-label="Filter recordings">
+            <button class="filter-chip" type="button" data-filter="all" aria-pressed="true">All recordings</button>
+            <button class="filter-chip" type="button" data-filter="favorites" aria-pressed="false">⭐ Favorites</button>
+            <button class="filter-chip" type="button" data-filter="recorded" aria-pressed="false">🎙️ Recorded here</button>
+            <button class="filter-chip" type="button" data-filter="imported" aria-pressed="false">📥 Imported</button>
+          </div>
+          <div class="settings-actions" style="margin:0 0 16px">
+            <button id="exportBackupButton" class="button" type="button">📦 Export full backup</button>
+            <button id="importBackupButton" class="button" type="button">📂 Restore backup</button>
+            <button id="deleteVisibleButton" class="button danger" type="button">🗑️ Delete visible</button>
+          </div>
+          <div id="libraryEmpty" class="empty-state">
+            <div class="empty-icon" aria-hidden="true">🎧</div>
+            <p class="empty-title">Your library is waiting</p>
+            <p class="empty-description">Record something or import an audio file. The browser stores recordings locally so they can remain available after you reopen this page.</p>
+            <button class="button primary" type="button" data-go-tab="recorder">🎙️ Make a recording</button>
+          </div>
+          <div id="recordingList" class="recording-list">
+          </div>
+        </div>
+      </section>
+      <section id="page-settings" role="tabpanel" aria-labelledby="tab-settings" data-page="settings" hidden>
+        <div class="panel panel-body">
+          <div class="panel-header">
+            <div>
+              <h2 class="panel-title">Make it yours</h2>
+              <p class="panel-description">Personalize sound capture, file naming, colors, visualizer, and privacy options.</p>
+            </div>
+            <span class="small-pill">CUSTOM MODE</span>
+          </div>
+          <div class="settings-grid">
+            <section class="settings-card">
+              <h3>🎚️ Audio quality</h3>
+              <p>Higher bitrates can increase file size. Actual format and quality depend on browser support.</p>
+              <div class="form-row">
+                <label class="form-label" for="qualitySelect">Recording quality</label>
+                <select id="qualitySelect" class="select">
+                  <option value="64">Compact · 64 kbps</option>
+                  <option value="96">Balanced · 96 kbps</option>
+                  <option value="128">Standard · 128 kbps</option>
+                  <option value="192">High · 192 kbps</option>
+                  <option value="256">Very high · 256 kbps</option>
+                </select>
+                <span class="form-help">Bitrate is a request to MediaRecorder, not a guarantee.</span>
+              </div>
+              <div class="form-row">
+                <label class="form-label" for="formatSelect">Preferred file format</label>
+                <select id="formatSelect" class="select">
+                  <option value="auto">Automatic · best supported</option>
+                  <option value="webm">WebM / Opus</option>
+                  <option value="mp4">MP4 / AAC (if supported)</option>
+                  <option value="ogg">Ogg / Opus (if supported)</option>
+                </select>
+                <span class="form-help">Unsupported formats fall back to a compatible browser format.</span>
+              </div>
+              <div class="form-row">
+                <label class="form-label" for="deviceSelect">Microphone input</label>
+                <select id="deviceSelect" class="select">
+                  <option value="">System default microphone</option>
+                </select>
+                <span class="form-help">Device labels usually appear after microphone permission is granted.</span>
+              </div>
+              <div class="form-r
